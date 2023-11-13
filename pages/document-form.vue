@@ -1,5 +1,5 @@
 <template>
-  <header>Biuro Obsługi Studenta</header>
+  <header><NuxtLink to="/">Biuro Obsługi Studenta</NuxtLink></header>
   <main>
     <h1>TRYB EDYCJI</h1>
     <form @submit.prevent="submitForm" class="formularz">
@@ -136,5 +136,9 @@ input[type="file"] {
   padding: 10px 40px 10px;
   cursor: pointer;
   margin: 10px;
+}
+a {
+  color: #bfdbf7;
+  text-decoration: none;
 }
 </style>

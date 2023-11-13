@@ -1,5 +1,5 @@
 <template>
-  <header>Biuro Obsługi Studenta</header>
+  <header><NuxtLink to="/">Biuro Obsługi Studenta</NuxtLink></header>
   <main>
     <h1>WNIOSKI</h1>
     <div class="list">
