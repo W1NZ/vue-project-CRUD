@@ -24,29 +24,30 @@ main {
     margin: 5px;
   }
 }
-.button {
-  display: inline-block;
+.list-element {
+  display: flex;
   padding: 10px 20px;
-  background-color: #053c5e;
+  width: 80vw;
+  background-color: #555;
   color: #bfdbf7;
   text-decoration: none;
-  border: none;
   border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-  &:hover {
-    background-color: #0049b2;
+  .buttons {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 5px;
   }
 }
 
 @media (min-width: 1024px) {
-  .button {
+  .list {
     font-size: 18px;
   }
 }
 
 @media (max-width: 767px) {
-  .button {
+  .list {
     font-size: 20px;
   }
 }
