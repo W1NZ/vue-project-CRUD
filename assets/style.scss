@@ -23,6 +23,21 @@ main {
     color: #555;
     margin: 5px;
   }
+  .create-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #053c5e;
+    color: #bfdbf7;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.4);
+  }
 }
 .list-element {
   display: flex;
@@ -31,12 +46,22 @@ main {
   background-color: #555;
   color: #bfdbf7;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 10px;
   .buttons {
     display: flex;
     align-items: center;
     margin-left: auto;
-    gap: 5px;
+    gap: 10px;
+    button {
+      background: #bfdbf7;
+      border: none;
+      cursor: pointer;
+      border-radius: 30%;
+      display: flex;
+      padding: 5px;
+      color: #555;
+      font-size: 18px;
+    }
   }
 }
 
@@ -44,10 +69,42 @@ main {
   .list {
     font-size: 18px;
   }
+  .title {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .list {
     font-size: 20px;
   }
+  .title {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 2vh;
+  }
+  .welcome-page {
+    img {
+      transform: scale(0.5);
+    }
+  }
 }
+
+///INDEX FILE
+.welcome-page {
+  height: 100vh;
+  overflow: hidden;
+  padding: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #bfdbf7;
+  color: #053c5e;
+  .title {
+    font-size: 48px;
+  }
+}
+///767px
