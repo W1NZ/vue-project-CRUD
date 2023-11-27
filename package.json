@@ -17,6 +17,7 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "sass": "^1.69.5"
+    "sass": "^1.69.5",
+    "vue-uuid": "^3.0.0"
   }
 }

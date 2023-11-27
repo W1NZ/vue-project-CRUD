@@ -10,6 +10,7 @@ a {
   text-decoration: none;
 }
 header {
+  font-size: 30px;
   padding: 10px;
   background-color: #053c5e;
   color: #bfdbf7;
@@ -22,7 +23,7 @@ main {
   flex-direction: column;
   align-items: center;
   h1 {
-    font-size: 16;
+    font-size: 45px;
     font-weight: 800;
     color: #555;
     margin: 5px;
@@ -38,7 +39,7 @@ main {
     padding: 15px;
     display: flex;
     align-items: center;
-    font-size: 16px;
+    font-size: 50px;
     cursor: pointer;
     box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.4);
   }
@@ -51,6 +52,7 @@ main {
   color: #bfdbf7;
   text-decoration: none;
   border-radius: 10px;
+  margin-bottom: 10px;
   .buttons {
     display: flex;
     align-items: center;
@@ -62,16 +64,16 @@ main {
       cursor: pointer;
       border-radius: 30%;
       display: flex;
-      padding: 5px;
+      padding: 10px;
       color: #555;
-      font-size: 18px;
+      font-size: 25px;
     }
   }
 }
 
 @media (min-width: 1024px) {
   .list {
-    font-size: 18px;
+    font-size: 30px;
   }
   .title {
     display: flex;
@@ -81,18 +83,13 @@ main {
 
 @media (max-width: 1024px) {
   .list {
-    font-size: 20px;
+    font-size: 35px;
   }
   .title {
     display: flex;
     flex-direction: column;
     text-align: left;
     gap: 2vh;
-  }
-  .welcome-page {
-    img {
-      transform: scale(0.5);
-    }
   }
 }
 
@@ -107,8 +104,11 @@ main {
   align-items: center;
   background-color: #bfdbf7;
   color: #053c5e;
+  img {
+    transform: scale(1.2);
+  }
   .title {
-    font-size: 48px;
+    font-size: 80px;
   }
 }
 ///767px

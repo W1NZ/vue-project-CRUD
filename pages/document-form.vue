@@ -2,13 +2,13 @@
   <header><NuxtLink to="/">Biuro Obsługi Studenta</NuxtLink></header>
   <main>
     <h1>TRYB EDYCJI</h1>
-    <form @submit.prevent="submitForm" class="formularz">
+    <form @submit.prevent="storeData" class="formularz">
       <div>
         <input
           class="text-input"
           type="text"
           id="title"
-          v-model="formData.title"
+          v-model="title"
           required
           placeholder="TYTUŁ"
         />
@@ -18,7 +18,7 @@
           class="text-input"
           type="text"
           id="name"
-          v-model="formData.name"
+          v-model="name"
           required
           placeholder="IMIĘ"
         />
@@ -28,7 +28,7 @@
           class="text-input"
           type="text"
           id="surname"
-          v-model="formData.surname"
+          v-model="surname"
           required
           placeholder="NAZWISKO"
         />
@@ -37,8 +37,8 @@
         <input
           class="text-input"
           type="text"
-          id="index"
-          v-model="formData.index"
+          id="album"
+          v-model="album"
           required
           placeholder="NR ALBUMU"
         />
@@ -48,13 +48,13 @@
         <input type="file" id="file" @change="handleFileChange" />
       </div>
       <div class="buttons">
-        <NuxtLink to="/documents"
-          ><button type="submit"><Icon name="fa6-solid:floppy-disk" /></button
-        ></NuxtLink>
-        <NuxtLink to="/documents"
-          ><button type="button" @click="cancelForm">
-            <Icon name="fa6-solid:circle-xmark" /></button
-        ></NuxtLink>
+        <button type="submit" @click="submitForm">
+          <Icon name="fa6-solid:floppy-disk" />
+        </button>
+
+        <button type="button" @click="cancelForm">
+          <Icon name="fa6-solid:circle-xmark" />
+        </button>
       </div>
     </form>
   </main>
@@ -67,28 +67,37 @@ export default {
         title: "",
         name: "",
         surname: "",
-        index: "",
+        album: "",
         file: null,
       },
     };
   },
   methods: {
+    storeData() {
+      let users = JSON.parse(localStorage.getItem("users") || "[]");
+      users.push({
+        title: this.title,
+        name: this.name,
+        surname: this.surname,
+        album: this.album,
+      });
+      localStorage.setItem("users", JSON.stringify(users));
+    },
     submitForm() {
-      // Handle form submission logic
       console.log("Form submitted:", this.formData);
+      window.location.href = "/documents";
     },
     cancelForm() {
-      // Handle form cancellation logic
       console.log("Form canceled");
+      window.location.href = "/documents";
     },
     handleFileChange(event) {
-      // Handle file change logic
       this.formData.file = event.target.files[0];
     },
   },
 };
 </script>
-<style scoped>
+<style scoped lang="scss">
 .formularz {
   display: flex;
   flex-direction: column;
@@ -106,6 +115,7 @@ export default {
   width: 100%;
   color: #bfdbf7;
   outline: none;
+  font-size: 25px;
 }
 .text-input::placeholder {
   color: #bfdbf7;
@@ -122,7 +132,7 @@ button {
   display: flex;
   padding: 5px;
   color: #bfdbf7;
-  font-size: 20px;
+  font-size: 35px;
 }
 input[type="file"] {
   display: none;
@@ -130,7 +140,7 @@ input[type="file"] {
 .custom-file-upload {
   background-color: #bfdbf7;
   text-align: left;
-  font-size: 16px;
+  font-size: 24px;
   border-radius: 10px;
   display: flex;
   padding: 10px 40px 10px;
